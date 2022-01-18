@@ -8,9 +8,7 @@ public class Yatzy {
         return (roll.isYatzy())? 50 : 0;
     }
 
-    public int ones(Roll roll) {
-        return roll.countDice(1);
-    }
+    public int ones(Roll roll) {return roll.countDice(1);}
 
     public int twos(Roll roll) {
         return roll.countDice(2) * 2;
@@ -25,17 +23,14 @@ public class Yatzy {
         return roll.countDice(4) * 4;
     }
 
-    public int fives(Roll roll)
-    {
-        return roll.countDice(5) * 5;
-    }
+    public int fives(Roll roll) {return roll.countDice(5) * 5;}
 
     public int sixes(Roll roll)
     {
         return roll.countDice(6) * 6;
     }
 
-    public int score_pair(Roll roll)
+    public int scorePair(Roll roll)
     {
         int score = 0;
         for(int i=6; i>=1; i--){
@@ -45,7 +40,7 @@ public class Yatzy {
         return score;
     }
 
-    public int two_pair(Roll roll)
+    public int twoPair(Roll roll)
     {
         int score = 0;
         int pairOccurrence = 0;
@@ -59,7 +54,7 @@ public class Yatzy {
         return (pairOccurrence == 2)? score : 0;
     }
 
-    public int four_of_a_kind(Roll roll)
+    public int fourOfAKind(Roll roll)
     {
         int score = 0;
         for(int i=1; i<=6; i++){
@@ -68,7 +63,7 @@ public class Yatzy {
         return score;
     }
 
-    public int three_of_a_kind(Roll roll)
+    public int threeOfAKind(Roll roll)
     {
         int score = 0;
         for(int i=1; i<=6; i++){
@@ -89,8 +84,8 @@ public class Yatzy {
 
     public int fullHouse(Roll roll)
     {
-        int scorePair = score_pair(roll);
-        int threeOfAKind = three_of_a_kind(roll);
+        int scorePair = scorePair(roll);
+        int threeOfAKind = threeOfAKind(roll);
         int scoreTotal = chance(roll);
         return (scorePair > 0 && threeOfAKind > 0 && scoreTotal == scorePair + threeOfAKind)? scoreTotal : 0;
     }
