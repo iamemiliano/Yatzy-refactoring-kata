@@ -1,7 +1,7 @@
 public enum Category {
-    Pair(2),
-    ThreeOfaKind(3),
-    FourOfaKind(4);
+    PAIR(2),
+    THREE_OF_A_KIND(3),
+    FOUR_OF_A_KIND(4);
 
     private int value;
 
